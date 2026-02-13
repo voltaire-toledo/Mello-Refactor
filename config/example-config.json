@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "settings": {
+    "startWithWindows": true,
+    "showTrayIcon": true,
+    "enableLogging": true
+  },
+  "actions": [
+    {
+      "id": "open-notepad",
+      "name": "Open Notepad",
+      "enabled": true,
+      "type": "LaunchApp",
+      "parameter": "notepad.exe",
+      "hotkey": {
+        "win": true,
+        "ctrl": false,
+        "shift": false,
+        "alt": false,
+        "key": 78,
+        "keyName": "N"
+      }
+    },
+    {
+      "id": "open-terminal",
+      "name": "Open Windows Terminal",
+      "enabled": true,
+      "type": "LaunchApp",
+      "parameter": "wt.exe",
+      "hotkey": {
+        "win": true,
+        "ctrl": false,
+        "shift": false,
+        "alt": false,
+        "key": 84,
+        "keyName": "T"
+      }
+    },
+    {
+      "id": "minimize-all",
+      "name": "Minimize All Windows",
+      "enabled": true,
+      "type": "WindowsAction",
+      "parameter": "MinimizeAll",
+      "hotkey": {
+        "win": false,
+        "ctrl": true,
+        "shift": true,
+        "alt": false,
+        "key": 77,
+        "keyName": "M"
+      }
+    }
+  ]
+}
