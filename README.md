@@ -13,20 +13,20 @@ A modern Windows 11 native application for managing global keyboard shortcuts an
 
 - **Language**: C++20, C++/WinRT
 - **UI Framework**: WinUI 3 (Windows App SDK)
-- **Build System**: Visual Studio 2022 Community Edition
+- **Build System**: Visual Studio 2022/2026 Community Edition
 - **Configuration**: JSON/YAML
 - **Architecture**: Modern Win32 with low-level keyboard hooks
 
 ## 📋 Features (Planned)
 
 - [x] Project setup and architecture
-- [ ] Low-level keyboard hook implementation
+- [x] Low-level keyboard hook implementation (Spec 001)
+- [x] WinUI 3 modern interface (basic)
+- [x] Hotkey conflict detection
 - [ ] JSON/YAML configuration loader
-- [ ] WinUI 3 modern interface
 - [ ] Action execution system
 - [ ] System tray integration
 - [ ] Settings management
-- [ ] Hotkey conflict detection
 - [ ] Auto-startup support
 - [ ] Import/Export configurations
 
@@ -45,34 +45,49 @@ A modern Windows 11 native application for managing global keyboard shortcuts an
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/voltaire-toledo/keyboard-hook-manager.git
-   cd keyboard-hook-manager
+   git clone https://github.com/voltaire-toledo/Mello-Refactor.git
+   cd Mello-Refactor
    ```
 
-2. Open `KeyboardHookManager.sln` in Visual Studio 2022
+2. Open `MelloRefactor.sln` in Visual Studio 2022
 
-3. Build the solution (F7)
+3. Restore NuGet packages (right-click solution > Restore NuGet Packages)
 
-4. Run (F5)
+4. Build the solution (F7)
+
+5. Run (F5)
+
+For detailed setup instructions, see [docs/visual-studio-2026-setup.md](docs/visual-studio-2026-setup.md)
 
 ## 📁 Project Structure
 
 ```
-keyboard-hook-manager/
+Mello-Refactor/
+├── MelloRefactor.sln                    # Visual Studio solution
 ├── src/
-│   ├── Core/              # Core keyboard hook logic
-│   ├── Configuration/     # Config loading and parsing
-│   ├── Actions/           # Action executors
-│   ├── UI/                # WinUI 3 interface
-│   └── Utils/             # Helper utilities
-├── include/               # Public headers
-├── tests/                 # Unit tests
-├── docs/                  # Documentation
-│   ├── specs/            # Feature specifications
-│   ├── architecture/     # Architecture decisions
-│   └── learning/         # Learning notes
-├── config/               # Sample configurations
-└── assets/               # Resources and icons
+│   ├── MelloRefactor/                   # WinUI 3 Application
+│   │   ├── App.xaml / .h / .cpp
+│   │   ├── MainWindow.xaml / .h / .cpp
+│   │   ├── Package.appxmanifest
+│   │   └── Assets/                      # App icons and resources
+│   └── MelloRefactor.Core/              # Core Library (Static .lib)
+│       ├── include/                     # Public headers
+│       │   ├── KeyboardHook.h           # Low-level keyboard hook
+│       │   ├── HotkeyManager.h          # High-level hotkey manager
+│       │   ├── KeyModifiers.h           # Modifier key constants
+│       │   └── HotkeyConfig.h           # Configuration structures
+│       └── src/                         # Implementation files
+├── tests/
+│   └── MelloRefactor.Tests/             # Google Test unit tests
+│       ├── KeyboardHookTests.cpp
+│       └── HotkeyManagerTests.cpp
+├── docs/                                # Documentation
+│   ├── specs/                           # Feature specifications
+│   │   └── 001-core-keyboard-hook.md    # Keyboard hook spec
+│   ├── visual-studio-2026-setup.md      # Setup guide
+│   └── copilot-workflow.md              # Development workflow
+└── config/                              # Sample configurations
+    └── example-config.json
 ```
 
 ## 📖 Learning Path
