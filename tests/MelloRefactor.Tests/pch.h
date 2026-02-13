@@ -1,0 +1,9 @@
+// Copyright (c) 2026 Voltaire Toledo
+// Licensed under the MIT License.
+// Part of the Mello-Refactor project
+// https://github.com/voltaire-toledo/Mello-Refactor
+
+#pragma once
+
+#include "gtest/gtest.h"
+#include <Windows.h>

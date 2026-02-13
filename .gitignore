@@ -36,6 +36,9 @@ ipch/
 *.VC.db
 *.VC.VC.opendb
 
+# Visual Studio project filters (auto-generated)
+*.vcxproj.filters
+
 # Visual Studio profiler
 *.psess
 *.vsp
